@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-primary: #5FD4FF;
+    --color-secondary: #0056B8;
+    --text-dark: #2a2a2a;
+    --white: #ffffff;
+    --gradient: linear-gradient(90deg, #0056B8 0%, #5FD4FF 100%);
+}
