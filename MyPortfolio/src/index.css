@@ -7,5 +7,5 @@
     --color-secondary: #0056B8;
     --text-dark: #2a2a2a;
     --white: #ffffff;
-    --gradient: linear-gradient(90deg, #0056B8 0%, #5FD4FF 100%);
+    --gradient: linear-gradient(90deg,#5FD4FF 0%, #0056B8 100% );
 }

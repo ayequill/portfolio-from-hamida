@@ -5,22 +5,32 @@ import "../index.css";
 import waveGif from "../assets/handwave.gif";
 
 const buttonGradient = {
-    background: 'var(--gradient)'
-}
+  background: "var(--gradient)",
+};
+
+const navWidth = {
+  maxWidth: "90vw",
+  margin: "2vw auto",
+  borderRadius: "50px",
+  borderBottom: "1px solid #E7EAEB",
+  background: 'rgba(208, 208, 208, 0.70)',
+  backdropFilter: "blur(15px)",
+};
 
 export default function NavBar() {
-    const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <>
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
-          className="flex items-center justify-between p-6 lg:px-8"
+          style={navWidth}
+          className="flex items-center justify-between p-4 lg:px-8"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src={logo} alt="" />
+              <img className="h-8 w-auto" src={logo} alt="Hamida's logo" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -67,16 +77,28 @@ export default function NavBar() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <button
-              className="text-sm font-semibold leading-6 text-white p-2 rounded-lg"
+              className="text-sm font-semibold leading-6 text-white py-2 px-4 rounded-lg"
               style={buttonGradient}
               onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
+              onMouseLeave={() => setIsHovered(false)}
             >
-              Say hi {isHovered ? <img src={waveGif} alt="waving hand gif"/> : '👋'}
+              Say hi{" "}
+              {isHovered ? (
+                <img
+                  style={{ display: "inline", verticalAlign: "middle" }}
+                  width="14px"
+                  height="14px"
+                  src={waveGif}
+                  alt="waving hand gif"
+                />
+              ) : (
+                "👋"
+              )}
             </button>
           </div>
         </nav>
-        {/* <!-- Mobile menu, show/hide based on menu open state. --> */}
+
+        {/* <!-- MOBILE --> */}
         <div className="lg:hidden" role="dialog" aria-modal="true">
           {/* <!-- Background backdrop, show/hide based on slide-over state. --> */}
           <div className="fixed inset-0 z-50"></div>
@@ -130,9 +152,7 @@ export default function NavBar() {
                   </a>
                 </div>
                 <div className="py-6">
-                  <button
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
+                  <button className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                     Say hi 👋
                   </button>
                 </div>
