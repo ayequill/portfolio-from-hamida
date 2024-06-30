@@ -8,159 +8,43 @@ const buttonGradient = {
   background: "var(--gradient)",
 };
 
-const navWidth = {
-  maxWidth: "90vw",
-  margin: "2vw auto",
-  borderRadius: "50px",
-  borderBottom: "1px solid #E7EAEB",
-  background: 'rgba(208, 208, 208, 0.70)',
-  backdropFilter: "blur(15px)",
-};
+// const navWidth = {
+//   maxWidth: "90vw",
+//   margin: "2vw auto",
+//   borderRadius: "50px",
+//   borderBottom: "1px solid #E7EAEB",
+//   background: "rgba(208, 208, 208, 0.70)",
+//   backdropFilter: "blur(15px)",
+// };
 
 export default function NavBar() {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <>
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav
-          style={navWidth}
-          className="flex items-center justify-between p-4 lg:px-8"
-          aria-label="Global"
-        >
-          <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src={logo} alt="Hamida's logo" />
-            </a>
-          </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-            </button>
-          </div>
-          <div className="hidden lg:flex lg:gap-x-12">
-            <a
-              href="#"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              My work
-            </a>
-            <a
-              href="#"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              About
-            </a>
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <button
-              className="text-sm font-semibold leading-6 text-white py-2 px-4 rounded-lg"
-              style={buttonGradient}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              Say hi{" "}
-              {isHovered ? (
-                <img
-                  style={{ display: "inline", verticalAlign: "middle" }}
-                  width="14px"
-                  height="14px"
-                  src={waveGif}
-                  alt="waving hand gif"
-                />
-              ) : (
-                "👋"
-              )}
-            </button>
-          </div>
-        </nav>
-
-        {/* <!-- MOBILE --> */}
-        <div className="lg:hidden" role="dialog" aria-modal="true">
-          {/* <!-- Background backdrop, show/hide based on slide-over state. --> */}
-          <div className="fixed inset-0 z-50"></div>
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
-                {/* <span className="sr-only">Your Company</span> */}
-                <img className="h-8 w-auto" src={logo} alt="" />
-              </a>
-              <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              >
-                <span className="sr-only">Close menu</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    My work
-                  </a>
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    About
-                  </a>
-                </div>
-                <div className="py-6">
-                  <button className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                    Say hi 👋
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+    <header className="w-full fixed">
+      <nav className="bg-gray-900 backdrop-filter backdrop-blur-sm nav-shadow bg-opacity-50 border-b border-gray-600 mx-auto px-4 py-2 max-w-xl rounded-full">
+        <div className="flex items-center justify-between">
+          <img src="/favicon.svg" />
+          <button
+            className="button-shadow bg-portfolioSecondary text-sm font-semibold leading-6 border border-[#00428C] text-white py-2 px-4 rounded-full"
+            // style={buttonGradient}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            Say hi{" "}
+            {isHovered ? (
+              <img
+                style={{ display: "inline", verticalAlign: "middle" }}
+                width="14px"
+                height="14px"
+                src={waveGif}
+                alt="waving hand gif"
+              />
+            ) : (
+              "👋"
+            )}
+          </button>
         </div>
-      </header>
-    </>
+      </nav>
+    </header>
   );
 }
