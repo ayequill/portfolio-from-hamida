@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'custom-inset': '0px 1px 1px rgba(255, 255, 255, 0.56) inset',
+        'button-shadow':'0px 2px 1px rgba(255, 255, 255, 0.55) inset'
+      },
       colors: {
         "portfolioPrimary": "#0098D0",
         "portfolioSecondary": "#0056B8",
