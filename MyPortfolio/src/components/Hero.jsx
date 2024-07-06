@@ -17,7 +17,7 @@ export default function HeroSection() {
             <p className="text-3xl xl:text-[40px] font-bold">
               I Create Seamless
             </p>
-            <span className="bg-gray-300 border border-gray-400 rounded-2xl w-16 h-16 sticker-shadow">
+            <span className="bg-gray-300 border border-gray-400 rounded-2xl w-16 h-16 sticker-shadow -rotate-6">
               <img src={stickerOne} />
             </span>
             <p className="text-3xl xl:text-[40px] font-bold">
@@ -37,7 +37,7 @@ export default function HeroSection() {
             >
               Design & Code
             </p>
-            <span className="bg-gray-300 border border-gray-400 rounded-2xl w-16 h-16 sticker-shadow">
+            <span className="bg-gray-300 border border-gray-400 rounded-2xl w-16 h-16 sticker-shadow rotate-6">
               <img src={stickerTwo} />
             </span>
           </div>
