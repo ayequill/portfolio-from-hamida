@@ -4,6 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
+body {
+  cursor: url('/src/assets/cursor-2.svg'), auto;
+}
 
 .logo {
   height: 6em;
