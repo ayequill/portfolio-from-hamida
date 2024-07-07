@@ -43,3 +43,7 @@ body {
 .read-the-docs {
   color: #888;
 }
+
+.icon-hover:hover {
+  color: red;
+}
