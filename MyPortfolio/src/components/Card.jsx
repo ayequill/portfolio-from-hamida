@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import curiosity from "../assets/thumbnails/curiosity.png"
+import curiosity from "../assets/thumbnails/test.png"
 import ProductModal from "./productModal";
 
 export default function Card() {
