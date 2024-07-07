@@ -13,19 +13,18 @@ export default function Works() {
       <div className="flex gap-8 flex-col max-w-3xl mx-auto justify-center items-center">
         <p className="text-3xl xl:text-[40px] font-bold">Work</p>
         <p>A showcase of my proudest creations</p>
-        <div className="text-portfolioTextLight flex w-auto max-w-[270px] bg-gray-300 gap-3 p-1 rounded-full ">
+        <div className="text-portfolioTextLight flex w-full max-w-[270px] bg-gray-300 gap-3 p-[1px] rounded-full  ">
           <button
             type="button"
-            className={`py-2 px-6 transition duration-300 ease-in-out rounded-full ${isActive === "Design" ? "bg-portfolioWhite text-portfolioTextDark font-semibold " : ""}`}
+            className={`py-2 px-6 transition duration-300 ease-in-out rounded-full ${isActive === "Design" ? "bg-portfolioWhite buttonGroup-shadow text-portfolioTextDark font-semibold " : ""}`}
             onClick={() => handleActive("Design")}
-            // aria-current="page"
           >
             Design
           </button>
 
           <button
             type="button"
-            className={` py-2 px-6 transition duration-300 ease-in-out rounded-full ${isActive === "Development" ? "bg-portfolioWhite text-portfolioTextDark font-semibold " : ""}`}
+            className={` py-2 px-6 transition duration-300 ease-in-out rounded-full ${isActive === "Development" ? "bg-portfolioWhite buttonGroup-shadow text-portfolioTextDark font-semibold " : ""}`}
             onClick={() => handleActive("Development")}
           >
             Development
