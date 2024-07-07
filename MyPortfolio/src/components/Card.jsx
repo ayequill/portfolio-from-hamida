@@ -8,7 +8,7 @@ export default function Card() {
     const closeModal = () => setModalOpen(false);
     return(
         <>
-        <div className="bg-gray-600 max-w-sm w-full h-auto rounded-2xl overflow-hidden"
+        <div className="bg-gray-600 max-w-sm w-full h-auto rounded-3xl overflow-hidden"
         onClick={openModal}>
             <img className="w-full h-full object-cover transition-transform duration-200 hover:scale-105" src={curiosity} />
         </div>
