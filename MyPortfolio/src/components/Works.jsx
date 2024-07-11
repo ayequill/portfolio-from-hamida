@@ -31,7 +31,7 @@ export default function Works() {
           </button>
         </div>
         {isActive === "Design" && (
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 w-full">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8  w-full">
             <Card />
             <Card />
           </div>
