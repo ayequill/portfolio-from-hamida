@@ -1,23 +1,32 @@
 import axios from "axios";
+import qs from "qs";
+import { flattenAttributes } from "./utils/utils";
 
-// const getStrapiData = async () => {
-//     try {
-//         const res = await axios.get(`http://localhost:1337/api/project`)
-//           return res.data
-       
-//     } catch (err) {
-//         console.error(err);
-//     }
-// };
+const projectQuery = qs.stringify({
+  populate: {
+    thumbnail: {
+      fields: ["url", "alternativeText"],
+    },
+    thumbnailGif: {
+      fields: ["url", "alternativeText"],
+    },
+  },
+});
 
-const fetchProjects = async () => {
-    try {
-        const res = await axios.get(`http://localhost:1337/api/works?populate[thumbnail][fields][0]=url&populate[thumbnail][fields][1]=alternativeText&populate[thumbnailGif][fields][0]=url&populate[thumbnailGif][fields][1]=alternativeText`)
-        console.log(res)
-        return res.data
-    } catch (err) {
-        console.error(err);
-    }
-}
+const fetchProjects = async (path) => {
+  const baseUrl = "http://localhost:1337";
+  const url = new URL(path, baseUrl);
+  url.search = projectQuery;
+  console.log(url.href); 
 
-export {fetchProjects};
+  try {
+    const res = await axios.get(url.href);
+    const flattenedData = flattenAttributes(res.data)
+    console.log(flattenedData);
+    return flattenedData;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export { fetchProjects };
