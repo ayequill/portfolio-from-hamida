@@ -1,8 +1,10 @@
 import React from "react";
 import { CloseCircle } from "iconsax-react";
 import curiosity from "../assets/thumbnails/curiosityThumb.gif";
+import PropTypes from "prop-types";
 
-export default function ProductModal({ isOpen, onClose }) {
+
+export default function ProductModal({ isOpen, onClose, thumbnailGif, projectTitle, projectDescription }) {
   if (!isOpen) return null;
 
   return (
@@ -19,7 +21,10 @@ export default function ProductModal({ isOpen, onClose }) {
         </div> */}
         <div className="absolute grid grid-cols-1 xl:grid-cols-2 h-full max-h-full">
           <div className="h-full ">
-            <img src={curiosity} className=" w-full h-full object-cover" />
+            <img 
+            src={thumbnailGif}
+            // src={`http://localhost:1337${project.thumbnailGif.url}`}
+            className=" w-full h-full object-cover" />
           </div>
           <div className="pb-4 pt-8 lg:pt-20 px-8 text-left text-portfolioTextLight">
             <CloseCircle
@@ -31,12 +36,14 @@ export default function ProductModal({ isOpen, onClose }) {
             <div className="flex flex-col gap-12">
               <div className="flex flex-col gap-3">
                 <p className="font-bold text-left text-portfolioTextDark">
-                  App for a Remote water quality monitoring systems
+                  {/* App for a Remote water quality monitoring systems */}
+                  {projectTitle}
                 </p>
                 <p>
-                  This project stands out from my previous work because it
+                  {projectDescription}
+                  {/* This project stands out from my previous work because it
                   involved developing an app for an IoT system designed to
-                  remotely assess water quality for fish farmers.
+                  remotely assess water quality for fish farmers. */}
                 </p>
               </div>
               <div className="flex gap-3 flex-wrap">
@@ -63,3 +70,11 @@ export default function ProductModal({ isOpen, onClose }) {
     </div>
   );
 }
+
+ProductModal.propTypes = {
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  title: PropTypes.string.isRequired,
+  thumbnailGif: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
