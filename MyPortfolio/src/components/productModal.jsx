@@ -4,9 +4,9 @@ import curiosity from "../assets/thumbnails/curiosityThumb.gif";
 import PropTypes from "prop-types";
 
 
-export default function ProductModal({ isOpen, onClose, thumbnailGif, projectTitle, projectDescription }) {
+export default function ProductModal({ isOpen, onClose, projectVideo, projectTitle, projectDescription }) {
   if (!isOpen) return null;
-
+  
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black backdrop-blur-sm bg-opacity-50 z-50 px-4">
       <div className="relative bg-portfolioWhite max-w-5xl h-3/4 w-full rounded-3xl  overflow-hidden">
@@ -22,7 +22,7 @@ export default function ProductModal({ isOpen, onClose, thumbnailGif, projectTit
         <div className="absolute grid grid-cols-1 xl:grid-cols-2 h-full max-h-full">
           <div className="h-full ">
             <img 
-            src={thumbnailGif}
+            src={projectVideo}
             // src={`http://localhost:1337${project.thumbnailGif.url}`}
             className=" w-full h-full object-cover" />
           </div>
@@ -75,6 +75,6 @@ ProductModal.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   title: PropTypes.string.isRequired,
-  thumbnailGif: PropTypes.string.isRequired,
+  projectVideo: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };

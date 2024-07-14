@@ -8,7 +8,7 @@ export default function Works() {
 
   useEffect(() => {
     const getProjects = async () => {
-      const fetchedProjects = await fetchProjects("/api/works");
+      const fetchedProjects = await fetchProjects("/api/design-projects");
       console.log(fetchedProjects.data);
       if (fetchedProjects) {
         setProjects(fetchedProjects.data);

@@ -5,23 +5,23 @@ import { flattenAttributes } from "./utils/utils";
 const projectQuery = qs.stringify({
   populate: {
     thumbnail: {
-      fields: ["url", "alternativeText"],
+      fields: ["url", "altText"],
     },
-    thumbnailGif: {
-      fields: ["url", "alternativeText"],
+    projectVideo: {
+      fields: ["url", "altText"],
     },
   },
 });
 
 const fetchProjects = async (path) => {
-  const baseUrl = "http://localhost:1337";
+  const baseUrl = "https://hamida-mahama.onrender.com/";
   const url = new URL(path, baseUrl);
   url.search = projectQuery;
-  console.log(url.href); 
+  console.log(url.href);
 
   try {
     const res = await axios.get(url.href);
-    const flattenedData = flattenAttributes(res.data)
+    const flattenedData = flattenAttributes(res.data);
     console.log(flattenedData);
     return flattenedData;
   } catch (err) {
