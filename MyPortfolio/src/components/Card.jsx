@@ -9,9 +9,12 @@ import PropTypes from "prop-types";
     const [isModalOpen, setModalOpen] = useState(false);
     const openModal = () => setModalOpen(true);
     const closeModal = () => setModalOpen(false);
-    const baseUrl = "https://hamida-mahama.onrender.com";
-    const { title, subTitle, thumbnail, projectVideo, description, id } = project;
+    // const baseUrl = "https://hamida-mahama.onrender.com";
+  const baseUrl = "http://localhost:1337";
 
+    const { title, thumbnail, projectVideo, description, id, tags } = project;
+    // console.log(project.description[0]?.children[0].text);
+    console.log(project.tags?.projectTags);
   return (
     <>
       <div
@@ -31,7 +34,7 @@ import PropTypes from "prop-types";
           </div>
         )}
       </div>
-      <ProductModal isOpen={isModalOpen} onClose={closeModal} projectTitle={project.title} projectDescription={project.description} projectVideo={baseUrl + project.projectVideo.url} />
+      <ProductModal isOpen={isModalOpen} onClose={closeModal} projectTitle={project.title} projectDescription={project.description[0]?.children[0].text} projectVideo={baseUrl + project.projectVideo.url} projectTags={project.tags?.projectTags}  />
     </>
   );
 }
