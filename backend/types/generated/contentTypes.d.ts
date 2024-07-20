@@ -794,6 +794,7 @@ export interface ApiDesignProjectDesignProject extends Schema.CollectionType {
     singularName: 'design-project';
     pluralName: 'design-projects';
     displayName: 'Design Projects';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -804,6 +805,8 @@ export interface ApiDesignProjectDesignProject extends Schema.CollectionType {
     description: Attribute.Blocks;
     thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     projectVideo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    liveProject: Attribute.String;
+    tags: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -815,6 +818,44 @@ export interface ApiDesignProjectDesignProject extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::design-project.design-project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDevelopmentProjectDevelopmentProject
+  extends Schema.CollectionType {
+  collectionName: 'development_projects';
+  info: {
+    singularName: 'development-project';
+    pluralName: 'development-projects';
+    displayName: 'Development Projects';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.Text;
+    description: Attribute.Blocks;
+    thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    projectVideo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    liveProject: Attribute.Text;
+    tags: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::development-project.development-project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::development-project.development-project',
       'oneToOne',
       'admin::user'
     > &
@@ -865,6 +906,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::design-project.design-project': ApiDesignProjectDesignProject;
+      'api::development-project.development-project': ApiDevelopmentProjectDevelopmentProject;
       'api::work.work': ApiWorkWork;
     }
   }
