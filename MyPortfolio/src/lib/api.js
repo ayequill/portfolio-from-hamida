@@ -14,8 +14,8 @@ const projectQuery = qs.stringify({
 });
 
 const fetchProjects = async (path) => {
-  // const baseUrl = "https://hamida-mahama.onrender.com/";
-  const baseUrl = "http://localhost:1337";
+  const baseUrl = "https://hamida-mahama.onrender.com/";
+  // const baseUrl = "http://localhost:1337";
 
   const url = new URL(path, baseUrl);
   url.search = projectQuery;
