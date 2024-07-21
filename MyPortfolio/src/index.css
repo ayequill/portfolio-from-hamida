@@ -56,3 +56,13 @@ body {
     margin-left: 0.5rem;
     vertical-align: middle;
   }
+
+  .say-hi-text {
+    display: inline;
+  }
+  
+  @media (max-width: 640px) { 
+    .say-hi-text {
+      display: none;
+    }
+  }
