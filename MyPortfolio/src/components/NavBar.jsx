@@ -17,7 +17,7 @@ export default function NavBar() {
 
   return (
     <>
-      <header className="w-screen backdrop-blur-sm sticky z-20 top-0 px-4 bg-portfolioWhite backdrop-filter bg-opacity-50 pt-8">
+      <header className="w-screen backdrop-blur-sm xl:sticky z-20 bottom-0 fixed xl:top-0 px-4 bg-portfolioWhite backdrop-filter bg-opacity-50 pb-8 xl:pt-8">
         <nav className="bg-gray-900 backdrop-filter backdrop-blur-sm nav-shadow bg-opacity-50 border-b border-gray-600 mx-0 md:mx-auto px-4 py-2 max-w-3xl rounded-full">
           <div className="flex items-center justify-between">
             <img src="/favicon.svg" alt="favicon" />
@@ -27,10 +27,10 @@ export default function NavBar() {
                   <a href="#" aria-current className="font-semibold">Home</a>
                 </li>
                 <li className="py-1 xl:px-3 hover:bg-gray-400 hover:rounded-full">
-                  <a className="text-gray-300" href="#">Work</a>
+                  <a className="text-gray-300" href="#work">Work</a>
                 </li>
                 <li className="py-1 xl:px-3 hover:bg-gray-400 hover:rounded-full">
-                  <a className="text-gray-300" href="#">About</a>
+                  <a className="text-gray-300" href="#about">About</a>
                 </li>
               </ul>
 
