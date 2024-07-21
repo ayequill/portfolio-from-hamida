@@ -27,7 +27,7 @@ export default function Works() {
   };
 
   return (
-    <section className="text-portfolioTextDark w-screen py-16 xl:py-20 px-4">
+    <section id="work" className="text-portfolioTextDark w-screen py-16 xl:py-20 px-4">
       <div className="flex gap-8 flex-col max-w-3xl mx-auto justify-center items-center">
         <p className="text-3xl xl:text-[40px] font-bold">Work</p>
         <p>A showcase of my proudest creations</p>
