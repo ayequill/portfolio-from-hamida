@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import { fetchProjects } from "../lib/api";
-// http://localhost:1337/api/development-projects
+
 export default function Works() {
   const [designprojects, setDesignProjects] = useState([]);
   const [devprojects, setDevProjects] = useState([])
