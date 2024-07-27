@@ -9,8 +9,8 @@ import PropTypes from "prop-types";
     const [isModalOpen, setModalOpen] = useState(false);
     const openModal = () => setModalOpen(true);
     const closeModal = () => setModalOpen(false);
-    // const baseUrl = "https://hamida-mahama.onrender.com";
-  const baseUrl = "http://localhost:1337";
+    const baseUrl = "https://hamida-mahama.onrender.com";
+  // const baseUrl = "http://localhost:1337";
 
     const { title, description, id, tags,thumbnailUrl,thumbnailGifUrl } = project;
     // console.log(project.description[0]?.children[0].text);
