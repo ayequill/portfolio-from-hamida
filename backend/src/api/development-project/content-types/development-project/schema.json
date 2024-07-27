@@ -21,33 +21,17 @@
     "description": {
       "type": "blocks"
     },
-    "thumbnail": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "projectVideo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "liveProject": {
       "type": "text"
     },
     "tags": {
       "type": "json"
+    },
+    "thumbnailUrl": {
+      "type": "string"
+    },
+    "thumbnailGifUrl": {
+      "type": "string"
     }
   }
 }

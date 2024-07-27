@@ -21,28 +21,6 @@
     "description": {
       "type": "blocks"
     },
-    "thumbnail": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "projectVideo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "liveProject": {
       "type": "string"
     },
@@ -53,6 +31,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::case-study.case-study"
+    },
+    "thumbnailUrl": {
+      "type": "string"
+    },
+    "thumbnailGifUrl": {
+      "type": "string"
     }
   }
 }

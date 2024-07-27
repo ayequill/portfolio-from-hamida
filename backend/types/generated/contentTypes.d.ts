@@ -841,8 +841,6 @@ export interface ApiDesignProjectDesignProject extends Schema.CollectionType {
     title: Attribute.String;
     subTitle: Attribute.Text;
     description: Attribute.Blocks;
-    thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    projectVideo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     liveProject: Attribute.String;
     tags: Attribute.JSON;
     case_study: Attribute.Relation<
@@ -850,6 +848,8 @@ export interface ApiDesignProjectDesignProject extends Schema.CollectionType {
       'oneToOne',
       'api::case-study.case-study'
     >;
+    thumbnailUrl: Attribute.String;
+    thumbnailGifUrl: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -884,10 +884,10 @@ export interface ApiDevelopmentProjectDevelopmentProject
     title: Attribute.String;
     subTitle: Attribute.Text;
     description: Attribute.Blocks;
-    thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    projectVideo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     liveProject: Attribute.Text;
     tags: Attribute.JSON;
+    thumbnailUrl: Attribute.String;
+    thumbnailGifUrl: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
