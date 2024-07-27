@@ -9,8 +9,8 @@ export default function Works() {
 
   useEffect(() => {
     const getProjects = async () => {
-      const fetchedDesignProjects = await fetchProjects("/api/design-projects");
-      const fetchedDevProjects = await fetchProjects("/api/development-projects")
+      const fetchedDesignProjects = await fetchProjects("/api/design-projects?populate=*	");
+      const fetchedDevProjects = await fetchProjects("/api/development-projects?populate=*")
       console.log(fetchedDevProjects.data);
       if (fetchedDesignProjects) {
         setDesignProjects(fetchedDesignProjects.data);
