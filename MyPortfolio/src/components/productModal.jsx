@@ -2,7 +2,7 @@ import { CloseCircle } from "iconsax-react";
 import PropTypes from "prop-types";
 
 
-export default function ProductModal({ isOpen, onClose, projectVideo, projectTitle, projectDescription,projectTags }) {
+export default function ProductModal({ isOpen, onClose, projectTitle, projectDescription,projectTags, thumbnailGifUrl }) {
   if (!isOpen) return null;
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black backdrop-blur-sm bg-opacity-50 z-50 px-4">
@@ -10,7 +10,7 @@ export default function ProductModal({ isOpen, onClose, projectVideo, projectTit
         <div className="absolute grid grid-cols-1 xl:grid-cols-2 h-full max-h-full">
           <div className="h-full ">
             <img 
-            src={projectVideo}
+            src={thumbnailGifUrl}
             className=" w-full h-full object-cover" />
           </div>
           <div className="pb-4 pt-8 lg:pt-20 px-8 text-left text-portfolioTextLight">
@@ -53,8 +53,9 @@ export default function ProductModal({ isOpen, onClose, projectVideo, projectTit
 ProductModal.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
-  title: PropTypes.string.isRequired,
-  projectVideo: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  // projectVideo: PropTypes.string.isRequired,
   description: PropTypes.string,
   projectTags: PropTypes.arrayOf(PropTypes.string),
+  thumbnailGifUrl: PropTypes.string
 };
