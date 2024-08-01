@@ -1,19 +1,28 @@
 import { CloseCircle } from "iconsax-react";
 import PropTypes from "prop-types";
+import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 
-export default function ProductModal({ isOpen, onClose, projectTitle, projectDescription,projectTags, thumbnailGifUrl }) {
+export default function ProductModal({ isOpen, onClose, projectTitle, projectSubtitle, liveProject, projectDescription,projectTags, thumbnailGifUrl, case_study }) {
+  const navigate = useNavigate();
   if (!isOpen) return null;
+  
+  
+  const handleClick = () => {
+    navigate(`/case-study/${case_study.id}`, { state: { caseStudyData: case_study } });
+  }
+  
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black backdrop-blur-sm bg-opacity-50 z-50 px-4">
       <div className="relative bg-portfolioWhite max-w-5xl h-3/4 w-full rounded-3xl  overflow-hidden">
         <div className="absolute grid grid-cols-1 xl:grid-cols-2 h-full max-h-full">
-          <div className="h-full ">
+          <div className="h-60 md:h-auto">
             <img 
             src={thumbnailGifUrl}
             className=" w-full h-full object-cover" />
           </div>
-          <div className="pb-4 pt-8 lg:pt-20 px-8 text-left text-portfolioTextLight">
+          <div className="pb-4 pt-8 lg:pt-20 px-3 xl:px-8 text-left text-portfolioTextLight overflow-y-scroll">
             <CloseCircle
               onClick={onClose}
               className="cursor-pointer absolute top-5 right-5 icon-hover"
@@ -24,7 +33,7 @@ export default function ProductModal({ isOpen, onClose, projectTitle, projectDes
               <div className="flex flex-col gap-3">
                 <p className="font-bold text-left text-portfolioTextDark">
                   {/* App for a Remote water quality monitoring systems */}
-                  {projectTitle}
+                  {projectTitle.toUpperCase()}
                 </p>
                 <p>
                   {projectDescription}
@@ -32,6 +41,21 @@ export default function ProductModal({ isOpen, onClose, projectTitle, projectDes
                   involved developing an app for an IoT system designed to
                   remotely assess water quality for fish farmers. */}
                 </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {case_study && Object.keys(case_study).length > 0 ? (
+                  <button className="inline-first-btn bg-portfolioTextDark text-shadow border-b-2 border-black hover:border-none button-secondary-shadow text-[#EBEBEB] px-3 py-1 rounded-full text-sm italic min-h-10"  onClick={handleClick}>
+                   Case Study 
+                  </button>
+                ) : (
+                  <span className="p-2 bg-red-100 text-[#FF6335] rounded-lg text-[12px]">
+                    <em className="inline-para text-[#FF6335] ">Welp! You got me..</em>
+                    <em> ..A case study is coming soon. Stay tuned</em>
+                    </span>
+                )}
+                <a href={`${liveProject}`} target="_blank" rel="noopener noreferrer" className="inline-second-btn leading-7 bg-portfolioTextDark text-shadow border-b-2 border-black hover:border-none button-secondary-shadow text-[#EBEBEB] px-3 py-1 rounded-full text-sm italic min-h-10"  >
+                   Launch Project 
+                  </a>
               </div>
               <div className="flex gap-3 flex-wrap">
                 {projectTags.map((tag, index) => (
@@ -54,8 +78,31 @@ ProductModal.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   title: PropTypes.string,
-  // projectVideo: PropTypes.string.isRequired,
   description: PropTypes.string,
   projectTags: PropTypes.arrayOf(PropTypes.string),
-  thumbnailGifUrl: PropTypes.string
+  thumbnailGifUrl: PropTypes.string,
+  case_study: PropTypes.shape({
+    data: PropTypes.shape({
+      id: PropTypes.number,
+      attributes: PropTypes.shape({
+        title: PropTypes.string,
+        about: PropTypes.string,
+        problemStatement: PropTypes.string,
+        description: PropTypes.arrayOf(
+          PropTypes.shape({
+            type: PropTypes.string,
+            children: PropTypes.arrayOf(
+              PropTypes.shape({
+                text: PropTypes.string,
+                type: PropTypes.string,
+              })
+            ),
+          })
+        ),
+        createdAt: PropTypes.string,
+        updatedAt: PropTypes.string,
+        publishedAt: PropTypes.string,
+      }),
+    }),
+  }),
 };
