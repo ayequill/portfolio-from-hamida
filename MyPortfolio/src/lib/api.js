@@ -14,8 +14,8 @@ import { flattenAttributes } from "./utils/utils";
 // });
 
 const fetchProjects = async (path) => {
-  const baseUrl = "https://hamida-mahama.onrender.com/";
-  // const baseUrl = "http://localhost:1337";
+  // const baseUrl = "https://hamida-mahama.onrender.com/";
+  const baseUrl = "http://localhost:1337";
 
   const url = new URL(path, baseUrl);
   // url.search = projectQuery;
@@ -24,7 +24,6 @@ const fetchProjects = async (path) => {
   try {
     const res = await axios.get(url.href);
     const flattenedData = flattenAttributes(res.data);
-    console.log(flattenedData);
     return flattenedData;
   } catch (err) {
     console.error(err);
