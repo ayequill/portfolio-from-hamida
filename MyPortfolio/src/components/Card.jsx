@@ -1,20 +1,29 @@
 import React, { useState } from "react";
-import curiosity from "../assets/thumbnails/test.png";
 import ProductModal from "./productModal";
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 
-// export default function Card({ thumbnail, altText, id }) {
   export default function Card({ project }) {
     
     const [isModalOpen, setModalOpen] = useState(false);
     const openModal = () => setModalOpen(true);
     const closeModal = () => setModalOpen(false);
-    const baseUrl = "https://hamida-mahama.onrender.com";
-  // const baseUrl = "http://localhost:1337";
+    // const baseUrl = "https://hamida-mahama.onrender.com";
+  const baseUrl = "http://localhost:1337";
+  useEffect(() => {
+    if(isModalOpen) {
+      document.body.classList.add('body-no-scroll');
+    } else {
+      document.body.classList.remove('body-no-scroll');
+    }
+    return () => {
+      document.body.classList.remove("body-no-scroll");
+    };
+  }, [isModalOpen])
 
-    const { title, description, id, tags,thumbnailUrl,thumbnailGifUrl } = project;
-    // console.log(project.description[0]?.children[0].text);
-    console.log(project.title);
+    const { title, description, id, tags,thumbnailUrl,thumbnailGifUrl, case_study, subTitle, liveProject } = project;
+    console.log(project.case_study);
+    // console.log(project.title);
   return (
     <>
       <div
@@ -34,7 +43,7 @@ import PropTypes from "prop-types";
           </div>
         )}
       </div>
-      <ProductModal isOpen={isModalOpen} onClose={closeModal} projectTitle={project.title} projectDescription={project.description[0]?.children[0].text} projectTags={project.tags?.projectTags} thumbnailGifUrl={project.thumbnailGifUrl}  />
+      <ProductModal isOpen={isModalOpen} onClose={closeModal} projectTitle={project.title} projectDescription={project.description[0]?.children[0].text} projectTags={project.tags?.projectTags} liveProject={liveProject} thumbnailGifUrl={project.thumbnailGifUrl} case_study={case_study} />
     </>
   );
 }
