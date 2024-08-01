@@ -1,13 +1,11 @@
 import { CloseCircle } from "iconsax-react";
 import PropTypes from "prop-types";
-import { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
 
 export default function ProductModal({ isOpen, onClose, projectTitle, projectSubtitle, liveProject, projectDescription,projectTags, thumbnailGifUrl, case_study }) {
   const navigate = useNavigate();
   if (!isOpen) return null;
-  
   
   const handleClick = () => {
     navigate(`/case-study/${case_study.id}`, { state: { caseStudyData: case_study } });
