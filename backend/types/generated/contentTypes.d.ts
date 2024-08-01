@@ -794,6 +794,7 @@ export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
     singularName: 'case-study';
     pluralName: 'case-studies';
     displayName: 'Case studies';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -802,12 +803,18 @@ export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
     title: Attribute.String;
     about: Attribute.Text;
     problemStatement: Attribute.Text;
-    description: Attribute.Blocks;
-    projectPhotos: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    thumbnail: Attribute.String;
+    projectDuration: Attribute.String;
+    platform: Attribute.String;
+    role: Attribute.String;
+    clientName: Attribute.String;
+    clientInfo: Attribute.Text;
+    clientImage: Attribute.String;
+    solution: Attribute.Text;
+    finalMockups: Attribute.String;
+    thanksImage: Attribute.String;
+    conclusion: Attribute.Text;
+    designProcess: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

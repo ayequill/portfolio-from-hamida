@@ -4,7 +4,8 @@
   "info": {
     "singularName": "case-study",
     "pluralName": "case-studies",
-    "displayName": "Case studies"
+    "displayName": "Case studies",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,28 +21,41 @@
     "problemStatement": {
       "type": "text"
     },
-    "description": {
-      "type": "blocks"
-    },
-    "projectPhotos": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
-    },
     "thumbnail": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      "type": "string"
+    },
+    "projectDuration": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "clientName": {
+      "type": "string"
+    },
+    "clientInfo": {
+      "type": "text"
+    },
+    "clientImage": {
+      "type": "string"
+    },
+    "solution": {
+      "type": "text"
+    },
+    "finalMockups": {
+      "type": "string"
+    },
+    "thanksImage": {
+      "type": "string"
+    },
+    "conclusion": {
+      "type": "text"
+    },
+    "designProcess": {
+      "type": "json"
     }
   }
 }
