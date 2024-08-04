@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import ProductModal from "./productModal";
+import DevProjectModal from "./devProjectModal";
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 
-  export default function Card({ project }) {
+  export default function DevCard({ project }) {
+  
+
     
     const [isModalOpen, setModalOpen] = useState(false);
     const openModal = () => setModalOpen(true);
@@ -21,9 +23,7 @@ import { useEffect } from "react";
     };
   }, [isModalOpen])
 
-    const { title, description, id, tags,thumbnailUrl,thumbnailGifUrl, case_study, subTitle, liveProject } = project;
-    console.log(project.case_study);
-    // console.log(project.title);
+    const { title, description, id, tags,thumbnailUrl,thumbnailGifUrl, subTitle, liveProject } = project;
   return (
     <>
       <div
@@ -35,7 +35,6 @@ import { useEffect } from "react";
           <img
             className="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
             src={project.thumbnailUrl}
-            // alt={baseUrl + project.thumbnail.altText || 'Thumbnail'}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-white">
@@ -43,11 +42,11 @@ import { useEffect } from "react";
           </div>
         )}
       </div>
-      <ProductModal isOpen={isModalOpen} onClose={closeModal} projectTitle={project.title} projectDescription={project.description[0]?.children[0].text} projectTags={project.tags?.projectTags} liveProject={liveProject} thumbnailGifUrl={project.thumbnailGifUrl} case_study={case_study} />
+      <DevProjectModal isOpen={isModalOpen} onClose={closeModal} projectTitle={project.title} projectDescription={project.description[0]?.children[0].text} projectTags={project.tags?.projectTags} liveProject={liveProject} thumbnailGifUrl={project.thumbnailGifUrl} />
     </>
   );
 }
 
-Card.propTypes = {
+DevCard.propTypes = {
   project: PropTypes.object.isRequired,
 };
