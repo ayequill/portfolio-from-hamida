@@ -122,10 +122,28 @@ body {
   .say-hi-text {
     display: inline;
   }
+
+  .icon:hover {
+    color:var(--color-secondary)
+  }
   
   @media (max-width: 640px) { 
     .say-hi-text {
       display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .popup {
+      position: fixed;
+      bottom: 56px; 
+      right: 10px; 
+      width: calc(100% - 20px); 
+      max-width: none; 
+      max-height: calc(100vh - 66px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      background-color: white; 
+      z-index: 30; 
     }
   }
 
