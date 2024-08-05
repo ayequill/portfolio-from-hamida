@@ -943,30 +943,6 @@ export interface ApiDevelopmentProjectDevelopmentProject
   };
 }
 
-export interface ApiWorkWork extends Schema.CollectionType {
-  collectionName: 'works';
-  info: {
-    singularName: 'work';
-    pluralName: 'works';
-    displayName: 'Work';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    thumbnailGif: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::work.work', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::work.work', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -989,7 +965,6 @@ declare module '@strapi/types' {
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::design-project.design-project': ApiDesignProjectDesignProject;
       'api::development-project.development-project': ApiDevelopmentProjectDevelopmentProject;
-      'api::work.work': ApiWorkWork;
     }
   }
 }
