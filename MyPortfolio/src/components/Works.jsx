@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Card from "./Card";
+import DesCard from "./DesCard";
+import DevCard from "./DevCard";
 import { fetchProjects } from "../lib/api";
 import ImageLoader from "../loader";
 
@@ -79,14 +80,14 @@ export default function Works() {
               {isActive === "Design" && (
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 w-full">
                   {designprojects.map((project) => (
-                    <Card key={project.id} project={project} />
+                    <DesCard key={project.id} project={project} />
                   ))}
                 </div>
               )}
               {isActive === "Development" && (
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 w-full">
                   {devprojects.map((project) => (
-                    <Card key={project.id} project={project} />
+                    <DevCard key={project.id} project={project} />
                   ))}
                 </div>
               )}
