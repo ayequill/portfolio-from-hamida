@@ -47,7 +47,7 @@ export default function HeroSection() {
             That&apos;s right! I don&apos;t only design..I code as well! I have
             been doing this for 2 years and i make sure to create fresh and
             polished solutions. I am constantly learning and immersing myself
-            into spaces that would help me grow as an individual, hence, you
+            into spaces that would help me grow as an individual. You
             will mostly find me:
           </p>{" "}
           <br />
