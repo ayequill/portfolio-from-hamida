@@ -1,8 +1,4 @@
 import React, { useState, useEffect, Fragment } from "react";
-import first from "../assets/thumbnails/hamida.jpg";
-import second from "../assets/thumbnails/hamida2.jpg";
-import third from "../assets/thumbnails/hamida3.jpg";
-import fourth from "../assets/thumbnails/hamida5.jpg";
 import { fetchProjects } from "../lib/api";
 
 export default function About() {
