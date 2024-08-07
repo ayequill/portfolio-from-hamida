@@ -41,7 +41,7 @@ export default function About() {
             <img
          
               src={fetchedAbout[currentStory].image}
-              className="object-contain"
+              className="object-cover"
               alt="About me"
               />
           </div>
