@@ -20,7 +20,7 @@ export default function About() {
     if (fetchedAbout.length > 0) {
       const interval = setInterval(() => {
         setCurrentStory((prevStory) => (prevStory + 1) % fetchedAbout.length);
-      }, 3000);
+      }, 10000);
 
       return () => clearInterval(interval);
     }
@@ -29,9 +29,6 @@ export default function About() {
   if (fetchedAbout.length === 0) {
     return <p>Loading...</p>;
   }
-
- 
-
   return (
     <section
       id="about"
@@ -40,9 +37,6 @@ export default function About() {
       <div className="flex gap-8 flex-col max-w-3xl mx-auto justify-center items-center">
         <p className="text-3xl xl:text-[40px] font-bold">About Me 😉</p>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 w-full">
-          
-        
-            
           <div className="border border-gray-400 sticker-shadow rounded-3xl bg-white w-full h-auto max-h-72 overflow-hidden flex justify-center items-center -rotate-3">
             <img
          
@@ -54,13 +48,8 @@ export default function About() {
           <div className="max-w-sm text-left w-full mb-4">
             <p className={currentStory === 0 ? "inline-paragraph" : ""}>
             {fetchedAbout[currentStory].text}
-              
             </p>
-          
           </div>
-        
-              
-      
         </div>
       </div>
     </section>
