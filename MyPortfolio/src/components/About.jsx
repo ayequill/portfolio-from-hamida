@@ -20,7 +20,7 @@ export default function About() {
     if (fetchedAbout.length > 0) {
       const interval = setInterval(() => {
         setCurrentStory((prevStory) => (prevStory + 1) % fetchedAbout.length);
-      }, 10000);
+      }, 5000);
 
       return () => clearInterval(interval);
     }

@@ -13,7 +13,7 @@ const Casestudy = () => {
   }, [caseStudyData]);
 
   if (!caseStudyData) {
-    return <p>No case study data available.</p>;
+    return <p>No case study data available</p>;
   }
 
   return (
