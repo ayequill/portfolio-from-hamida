@@ -10,7 +10,7 @@ export default function DesProjectModal({ isOpen, onClose, projectTitle, project
   const handleClick = () => {
     navigate(`/case-study/${case_study.id}`, { state: { caseStudyData: case_study } });
   }
-  
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black backdrop-blur-sm bg-opacity-50 z-50 px-4">
       <div className="relative bg-portfolioWhite max-w-5xl h-3/4 w-full rounded-3xl  overflow-hidden">
@@ -30,14 +30,10 @@ export default function DesProjectModal({ isOpen, onClose, projectTitle, project
             <div className="flex flex-col gap-12">
               <div className="flex flex-col gap-3">
                 <p className="font-bold text-left text-portfolioTextDark">
-                  {/* App for a Remote water quality monitoring systems */}
                   {projectTitle.toUpperCase()}
                 </p>
                 <p>
                   {projectDescription}
-                  {/* This project stands out from my previous work because it
-                  involved developing an app for an IoT system designed to
-                  remotely assess water quality for fish farmers. */}
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">

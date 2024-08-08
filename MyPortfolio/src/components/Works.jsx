@@ -19,7 +19,6 @@ export default function Works() {
       const fetchedDevProjects = await fetchProjects(
         "/api/development-projects?populate=*"
       );
-      console.log(fetchedDesignProjects.data);
       if (fetchedDesignProjects) {
         setDesignProjects(fetchedDesignProjects.data);
       }
@@ -78,14 +77,14 @@ export default function Works() {
           ) : (
             <>
               {isActive === "Design" && (
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                   {designprojects.map((project) => (
                     <DesCard key={project.id} project={project} />
                   ))}
                 </div>
               )}
               {isActive === "Development" && (
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                   {devprojects.map((project) => (
                     <DevCard key={project.id} project={project} />
                   ))}
