@@ -39,7 +39,7 @@ export default function DevProjectModal({ isOpen, onClose, projectTitle, project
                   </a>
                 </div>
              
-              {/* <div className="flex gap-3 flex-wrap">
+              <div className="flex gap-3 flex-wrap">
                 {projectTags.map((tag, index) => (
 
                 <p key={index} className="py-1 px-2 border border-gray-300 text-portfolioTextDark rounded-md text-center text-[12px]">
@@ -47,7 +47,7 @@ export default function DevProjectModal({ isOpen, onClose, projectTitle, project
                 </p>
                 ))}
                 
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
