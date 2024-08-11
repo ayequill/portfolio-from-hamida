@@ -1,10 +1,20 @@
 import { CloseCircle } from "iconsax-react";
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 
 
 export default function DevProjectModal({ isOpen, onClose, projectTitle, projectSubtitle, liveProject, projectDescription,projectTags, thumbnailGifUrl}) {
     if (!isOpen) return null;
-  
+  const [isImage,setIsImage] = useState(true)
+
+  const checkIsImage= (url) => {
+    return /\.(jpeg|jpg|gif|png|svg)$/i.test(url)
+  };
+
+  useEffect(()=> {
+    setIsImage(checkIsImage(thumbnailGifUrl));
+  },[])
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black backdrop-blur-sm bg-opacity-50 z-50 px-4">
       <div className="relative bg-portfolioWhite max-w-5xl h-3/4 w-full rounded-3xl  overflow-hidden">
