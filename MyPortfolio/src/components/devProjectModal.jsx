@@ -20,9 +20,19 @@ export default function DevProjectModal({ isOpen, onClose, projectTitle, project
       <div className="relative bg-portfolioWhite max-w-5xl h-3/4 w-full rounded-3xl  overflow-hidden">
         <div className="absolute grid grid-cols-1 xl:grid-cols-2 h-full max-h-full">
           <div className="h-60 md:h-auto">
-            <img 
-            src={thumbnailGifUrl}
-            className=" w-full h-full object-cover" />
+            {isImage ? (
+              <img 
+              src={thumbnailGifUrl}
+              className=" w-full h-full object-cover" />
+            ) : (
+              <video
+                src={thumbnailGifUrl}
+                className="object-cover w-full h-full"
+                autoPlay
+                loop
+                />
+            )
+            }
           </div>
           <div className="pb-4 pt-8 lg:pt-20 px-3 xl:px-8 text-left text-portfolioTextLight overflow-y-scroll">
             <CloseCircle
