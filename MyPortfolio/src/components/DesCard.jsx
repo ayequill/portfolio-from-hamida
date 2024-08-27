@@ -22,8 +22,6 @@ import { useEffect } from "react";
   }, [isModalOpen])
 
     const { title, description, id, tags,thumbnailUrl,thumbnailGifUrl, case_study, subTitle, liveProject } = project;
-    console.log(project.case_study);
-    // console.log(project.title);
   return (
     <>
       <div
